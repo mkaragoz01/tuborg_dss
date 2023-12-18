@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Türk Tuborg Temizlik Portalı</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .dashboard-container {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+    .dashboard-box {
+            width: 700px;
+            height: 400px;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 1%;
+            background-color: rgb(255, 255, 255);
+        }
+        #box3{
+          position: relative;
+        }
+
+        #myChart3{
+          margin: auto;
+          width: 1500px;
+        }
+
+        #myChart6{
+          margin: auto;
+          width: 500px;
+        }
+      
+  </style>
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+</head>
+<style>
+    
+  *{
+    font-family: Montserrat,serif,sans-serif;
+  }
+</style>
+
+<body class="hold-transition sidebar-mini">
+  <!-- Site wrapper -->
+  <div class="wrapper">
+    <!-- Navbar -->
+
+
+    <!-- Messages Dropdown Menu -->
+
+    <!-- Notifications Dropdown Menu -->
+  
+    <li class="nav-item">
+
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+        <i class="fas fa-th-large"></i>
+      </a>
+    </li>
+    </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4" style="position: fixed;">
+      <!-- Brand Logo -->
+      <a  class="brand-link">
+        <img src="../img/Türk_Tuborg_logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+          style="opacity: .8">
+        <span class="brand-text font-weight-light">Türk Tuborg <br> <span style="padding-left: 60px;">Temizlik
+            Portalı</span></span>
+      </a>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- Sidebar user (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+          <div class="info">
+            <p class="d-block bg-dark" id="kullaniciAdi">
+          </div>
+        </div>
+
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+            <li class="nav-item">
+              <a href="/" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                  <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+                </svg>  
+              Anasayfa
+                <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+            </li> 
+            <li class="nav-item">
+              <a href="/table" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-table" viewBox="0 0 16 16">
+                  <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 2h-4v3h4zm0 4h-4v3h4zm0 4h-4v3h3a1 1 0 0 0 1-1zm-5 3v-3H6v3zm-5 0v-3H1v2a1 1 0 0 0 1 1zm-4-4h4V8H1zm0-4h4V4H1zm5-3v3h4V4zm4 4H6v3h4z"/>
+                </svg>
+                  Tablo
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+            </li>
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">      
+      <!-- Main content -->
+      <script src="blok1.js"></script>
+      <div class="row">
+        <div class="col-lg-3 col-6">
+        
+        <div class="small-box bg-info">
+        <div class="inner">
+        <h3 id="blok1" name="blok1"></h3>
+        <p>Toplam Temizlik Personeli Sayısı</p>
+        </div>
+        <div class="icon">
+        <i class="ion ion-bag"></i>
+        </div>
+
+        </div>
+        </div>
+        
+        <div class="col-lg-3 col-6">
+        
+        <div class="small-box bg-success">
+        <div class="inner">
+        <h3 id="blok2" name="blok2"></h3>
+        <p>Toplam Oda Sayısı</p>
+        </div>
+        <div class="icon">
+        <i class="ion ion-stats-bars"></i>
+        </div>
+
+        </div>
+        </div>
+        
+        <div class="col-lg-3 col-6">
+        
+        <div class="small-box bg-warning">
+        <div class="inner">
+        <h3 id="blok3" name="blok3"><sup style="font-size: 20px"></sup></h3>
+        <p>Oda Temizlik Oranı</p>
+        </div>
+        <div class="icon">
+        <i class="ion ion-person-add"></i>
+        </div>
+
+        </div>
+        </div>
+        
+        <div class="col-lg-3 col-6">
+        
+        <div class="small-box bg-danger">
+        <div class="inner">
+        <h3 id="blok4" name="blok4">65</h3>
+        <p>Toplam Temizlik Kaydı</p>
+        </div>
+        <div class="icon">
+        <i class="ion ion-pie-graph"></i>
+        </div>
+
+        </div>
+        </div>
+        
+        </div>
+        <div class="dashboard-container">
+          <div class="dashboard-box" id="box1">
+              <canvas id="myChart1" width="250" height="150"></canvas>
+          </div>
+  
+          <div class="dashboard-box" id="box2">
+              <canvas id="myChart2" style="margin: auto;"></canvas>
+          </div>
+        </div>
+       <div class="dashboard-container"> 
+          <div class="dashboard-box" id="box3">
+            <canvas id="myChart3"></canvas>
+          </div> 
+  
+          <div class="dashboard-box" id="box4">
+            <canvas id="myChart4"></canvas>
+         </div> 
+        </div>
+        <div class="dashboard-container"> 
+          <div class="dashboard-box" id="box5">
+            <canvas id="myChart5"></canvas>
+          </div>
+
+          <div class="dashboard-box" id="box6">
+            <canvas id="myChart6"></canvas>
+        </div> 
+        </div>
+      <!-- /.content -->
+    </div>
+
+    <footer class="main-footer">
+    </footer>
+
+  </div>
+  <!-- ./wrapper -->
+
+  <!-- jQuery -->
+  <script src="../plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="../dist/js/adminlte.min.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="../dist/js/demo.js"></script>
+</body>
+
+</html>

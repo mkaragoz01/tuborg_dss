@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Türk Tuborg Temizlik Portalı</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+  <style>
+    
+      *{
+        font-family: Montserrat,serif,sans-serif;
+      }
+  </style>
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+</head>
+
+<body class="hold-transition sidebar-mini">
+  <!-- Site wrapper -->
+  <div class="wrapper">
+    <!-- Navbar -->
+
+
+    <!-- Messages Dropdown Menu -->
+
+    <!-- Notifications Dropdown Menu -->
+  
+    <li class="nav-item">
+
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+        <i class="fas fa-th-large"></i>
+      </a>
+    </li>
+    </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4" style="position: fixed;">
+      <!-- Brand Logo -->
+      <a  class="brand-link">
+        <img src="../img/Türk_Tuborg_logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+          style="opacity: .8">
+        <span class="brand-text font-weight-light">Türk Tuborg <br> <span style="padding-left: 60px;">Temizlik
+            Portalı</span></span>
+      </a>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- Sidebar user (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+          <div class="info">
+            <p class="d-block bg-dark" id="kullaniciAdi"></p>
+          </div>
+        </div>
+
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+            <li class="nav-item">
+              <a href="/" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+                  </svg>  
+                Anasayfa
+                <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/table" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-table" viewBox="0 0 16 16">
+                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 2h-4v3h4zm0 4h-4v3h4zm0 4h-4v3h3a1 1 0 0 0 1-1zm-5 3v-3H6v3zm-5 0v-3H1v2a1 1 0 0 0 1 1zm-4-4h4V8H1zm0-4h4V4H1zm5-3v3h4V4zm4 4H6v3h4z"/>
+                  </svg>
+                  Tablo
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+            </li>
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">      
+      
+        <div class="card-body">
+            <!-- DataTables ile oluşturulan tablo -->
+            <table id="reservationTable" class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Oda No</th>
+                  <th>Oda Adı</th>
+                  <th>Personel Adı-Soyadı</th>
+                  <th>Durum</th>
+                  <th>Giriş Tarihi</th>
+                  <th>Çıkış Tarihi</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      
+        <script>
+          // API'den veri çekme ve DataTable oluşturma
+          $(document).ready(function () {
+            $.ajax({
+              url: 'http://localhost:3000/api/get_table', // API endpoint'i
+              method: 'GET',
+              success: function (data) {
+                // DataTables kullanarak tabloyu oluştur
+                $('#reservationTable').DataTable({
+                  data: data.message,
+                  columns: [
+                    { data: 'id' },
+                    { data: 'oda_no' },
+                    { data: 'oda_ad' },
+                    { data: 'personel_ad_soyad' },
+                    { data: 'durum' },
+                    { data: 'giris_tarih_saat' },
+                    { data: 'cikis_tarih_saat' }
+                  ]
+                });
+              }
+            })
+          })
+        </script>
+      <!-- /.content -->
+    </div>
+
+    <footer class="main-footer">
+    </footer>
+
+  </div>
+  <!-- ./wrapper -->
+  <script src="blok1.js"></script>
+  <!-- jQuery -->
+  <script src="../plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="../dist/js/adminlte.min.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="../dist/js/demo.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
+</html>

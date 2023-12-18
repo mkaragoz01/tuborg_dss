@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+    />
+    <link rel="stylesheet" href="style2.css" />
+    <link rel="icon" href="img/Türk_Tuborg_logo.ico" type="image/x-icon" />
+    <title>Türk Tuborg Kayıt Ekranı</title>
+  </head>
+
+  <body>
+    <header>
+      <img src="img/Türk_Tuborg_logo.png" alt="Türk_Tuborg_logo " />
+      <div class="kullanicigirislinkleri">
+        <a href="/login">Giriş Yap / Log In</a>
+        <span id="linkspan">veya</span>
+        <a href="/register">Kayıt ol / Sign Up</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="kayit-form">
+        <form action="/register" method="post">
+          <div id="ad-sec">
+            <label for="ad-sec-input">Adınız</label>
+            <input type="text" id="ad" name="ad" required />
+          </div>
+
+          <div id="soyad-sec">
+            <label for="soyad-sec-input">Soyadınız</label>
+            <input type="text" id="soyad" name="soyad" required />
+          </div>
+
+          <div id="email-sec">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" />
+          </div>
+          <div id="kullanici-adi-sec">
+            <label for="kullanici-ad-sec-input">Kullanıcı Adı</label>
+            <input type="text" id="k_adi" name="k_adi" required />
+          </div>
+
+          <div id="sifre-sec">
+            <label for="sifre-sec-input">Şifre</label>
+            <input type="password" id="sifre" name="sifre" required />
+          </div>
+
+          <div id="butonlar">
+            <input type="submit" id="k_ol" value="Kayıt Ol" />
+            <span>veya zaten bir hesabın varsa</span>
+            <input
+              type="button"
+              id="gonder"
+              name="gonder"
+              value="Giriş Yap"
+              onclick="window.location.href='index.html'"
+            />
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer><span>Bütün Hakları Saklıdır.</span></footer>
+  </body>
+</html>

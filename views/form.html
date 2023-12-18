@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="formstyle.css">
+    <link rel="icon" href="./views/img/Türk_Tuborg_logo.ico" type="image/x-icon" />
+    <title>Türk Tuborg Temizlik Form Ekranı</title>
+</head>
+
+<body>
+    <header>
+        <img src="img/Türk_Tuborg_logo.png" alt="Türk_Tuborg_logo ">
+    </header>
+
+    <main>
+
+
+        <div class="kayit-form">
+            <form action="/form" method="post">
+                <div id="ad-sec">
+                    <label for="ad-sec-input">Personel Adı - Soyadı</label>
+                    <select id="personel_sec" name="personel_sec">
+                        <option>Personel Seç</option>
+                        <option>Ahmet Demir</option>     
+                        <option>Mustafa Karagöz</option>
+                        <option>Canberk Dinçer</option>
+                        <option>Ali Koç</option>
+                      </select>
+                </div>
+                
+                <div id="oda-sec">
+                    <label for="oda_sec">Oda No</label>
+                    <input type="number" id="oda_sec" name="oda_sec" min="1" max="10">
+                </div>
+                
+                <div id="temizlik-turu-sec">
+                    <label for="temizlik-turu-sec-input">Temizlik Türü</label>
+                    <select id="temizlik_tur" name="temizlik_tur">
+                        <option>Temizlik Türü Seç</option>
+                        <option>Günlük</option>     
+                        <option>Haftalık</option>
+                        <option>Girilmedi</option>
+                      </select>
+                </div>
+
+                <div id="giris-tarih-saat-sec">
+                    <label for="giris-tarih-saat-sec-input">Giriş Tarihi / Saati</label>
+                    <input type="datetime-local" id="giris_input" name="giris_input" required>
+                </div>
+
+                <div id="cikis-tarih-saat-sec">
+                    <label for="cikis-tarih-saat-sec-input">Çıkış Tarihi / Saati</label>
+                    <input type="datetime-local" id="cikis_input" name="cikis_input" required>
+                </div>
+
+                <div id="butonlar">
+                    <input type="submit" id="gonder" value="Gönder">
+                    <span>veya</span>
+                    <input type="reset" id="iptal" name="iptal" value="İptal Et">
+
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer><span>Bütün Hakları Saklıdır.</span></footer>
+</body>
+
+</html>

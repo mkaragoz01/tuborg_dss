@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/Türk_Tuborg_logo.ico" type="image/x-icon" />
+    <title>Türk Tuborg Giriş Ekranı</title>
+  </head>
+
+  <body>
+    <header>
+      <img src="img/Türk_Tuborg_logo.png" alt="Türk_Tuborg_logo " />
+      <div class="kullanicigirislinkleri">
+        <a href="/login">Giriş Yap / Log In</a>
+        <span id="linkspan">veya</span>
+        <a href="/register">Kayıt ol / Sign Up</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="giris-form">
+        <form id="registerForm" action="/login" method="post">
+          <div id="k_adi_div">
+            <label for="kullanici-ad">Kullanıcı Adı</label>
+            <input type="text" id="k_adi" name="k_adi" required />
+          </div>
+
+          <div id="sifre_div">
+            <label for="sifre-label">Şifre</label>
+            <input type="password" id="sifre" name="sifre" required />
+          </div>
+          <div id="beni-hatirla">
+            <label for="benihatirla"
+              ><small><b>Beni Hatırla</b></small></label
+            >
+            <input type="checkbox" id="benihatirla" name="benihatirla" />
+          </div>
+          <div id="butonlar">
+            <input type="submit" id="gonder" name="gonder" value="Giriş Yap" />
+            <span>veya</span>
+            <input
+              type="button"
+              id="kayit-ol"
+              name="kayit-ol"
+              value="Kayıt Ol"
+              onclick="window.location.href='/register'"
+            />
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer><span>Bütün Hakları Saklıdır.</span></footer>
+  </body>
+</html>

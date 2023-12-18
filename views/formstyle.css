@@ -1,0 +1,120 @@
+/*KAYIT EKRANI*/
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Montserrat, sans-serif, serif;
+}
+
+body {
+    background-color: rgb(227, 227, 227);
+    width: 100%;
+    min-height: 1100px;
+    border: solid 1px black;
+}
+
+header {
+    background-color: white;
+    border-bottom: solid 1px black;
+    width: 100%;
+    height: 120px;
+    position: fixed;
+    top: 0px;
+}
+
+header img {
+    float: left;
+    position: relative;
+    top: 18px;
+    left: 30px;
+    width: 100px;
+}
+
+
+
+.kayit-form {
+    background-color: white;
+    border: black solid 1px;
+    border-radius: 25px;
+    box-shadow: 10px 10px 20px black;
+    font-weight: bold;
+    padding: 50px;
+    margin: auto;
+    margin-top: 200px;
+    width: 600px;
+    min-height: 400px;
+}
+
+#ad-sec {
+    width: 100%;
+}
+
+#ad-sec select{
+    display: inline;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(255, 241, 159);
+    box-shadow: 2px 2px 5px inset;
+    color: black;
+    font-size: large;
+    font-weight: 900;
+    margin: 10px 0px 20px 0px
+}
+
+input[type=number],
+input[type=datetime-local],
+#temizlik-turu-sec select {
+    display: inline;
+    width: 500px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(255, 241, 159);
+    box-shadow: 2px 2px 5px inset;
+    color: black;
+    font-size: large;
+    font-weight: 900;
+    margin: 10px 0px 20px 0px
+}
+
+label {
+    display: block;
+}
+
+#butonlar {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.kayit-form input[type=submit],
+.kayit-form input[type=reset] {
+    display: inline-block;
+    width: 100%;
+    height: 25px;
+    margin: 5px 0px 5px 0px;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 16px;
+    color: black;
+
+}
+
+.kayit-form input[type=submit]:hover,
+.kayit-form input[type=reset]:hover {
+    color: #E8DD41;
+}
+
+footer {
+    background-color: white;
+    border-top: solid 1px black;
+    text-align: center;
+    font-size: small;
+    font-weight: bolder;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom: 0px;
+    padding-top: 10px;
+}
